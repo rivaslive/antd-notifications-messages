@@ -1,0 +1,182 @@
+.notification {
+  width: fit-content !important;
+}
+
+.notification__item {
+  display: flex;
+  position: relative;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  -webkit-box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+  0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
+  0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.notification__parent {
+  width: fit-content !important;
+}
+
+// Add properties
+.notification-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-width: 250px;
+  min-height: 60px;
+  border: none;
+  padding: 16px 24px;
+  background: white;
+
+  .icon-notification {
+    width: 35px;
+    padding-right: 10px;
+  }
+}
+
+.message-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 20px;
+  border: none;
+  padding: 8px 16px;
+  background: white !important;
+}
+
+.notification-title {
+  margin-bottom: 3px;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 16px;
+  line-height: 24px;
+  padding-right: 24px;
+}
+
+.notification-content {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.notification-close {
+  position: absolute;
+  color: rgba(0, 0, 0, 0.5);
+  right: 10px;
+  top: 10px;
+}
+
+.notification-close::after {
+  content: '' !important;
+}
+
+.notification-close::before {
+  content: '✕';
+}
+
+.notification-close:hover {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.elementTopFadeIn {
+  -webkit-animation: fadeinTop 300ms linear forwards;
+  animation: fadeinTop 300ms linear forwards;
+}
+
+.elementTopFadeOut {
+  -webkit-animation: fadeoutTop 300ms linear forwards;
+  animation: fadeoutTop 300ms linear forwards;
+}
+
+.elementToFadeIn {
+  -webkit-animation: fadein 300ms linear forwards;
+  animation: fadein 300ms linear forwards;
+}
+
+.elementToFadeOut {
+  -webkit-animation: fadeout 300ms linear forwards;
+  animation: fadeout 300ms linear forwards;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(350px);
+  }
+}
+
+@keyframes fadeinTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeoutTop {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+.rotate {
+  transform: rotate(-90deg);
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+}
+
+.icon-success {
+  .icon {
+    fill: #52c41a;
+  }
+}
+
+.icon-info {
+  .icon {
+    fill: #1890ff;
+  }
+}
+
+.icon-warning {
+  .icon {
+    fill: #faad14;
+  }
+}
+
+.icon-error {
+  .icon {
+    fill: #ff4d4f;
+  }
+}
+
+.icon-message {
+  padding-right: 10px;
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
