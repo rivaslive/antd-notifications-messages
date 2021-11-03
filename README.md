@@ -21,7 +21,19 @@ or
 - `yarn add antd-notifications-messages`
 
 ## How to use:
+import css in fisrt file to project
+
+index.js
 ```js
+// import CSS
+import 'antd-notifications-messages/lib/styles/index.css'
+
+...
+```
+
+```js
+// import CSS
+import 'antd-notifications-messages/lib/styles/index.css'
 import React from 'react'
 import { notification } from 'antd-notifications-messages'
 
