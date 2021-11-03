@@ -1,3 +1,20 @@
+.wrapper-notification {
+  right: 0px;
+  top: 24px;
+  bottom: auto;
+  box-sizing: border-box;
+  margin: 0 24px 0 0;
+  padding: 0;
+  color: #000000d9;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: 'tnum';
+  position: fixed;
+  z-index: 1010;
+}
+
 .notification {
   width: fit-content !important;
 }
@@ -8,9 +25,9 @@
   border-radius: 3px;
   margin-bottom: 15px;
   -webkit-box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
-  0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
   box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12),
-  0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
   cursor: pointer;
 }
 
@@ -19,15 +36,21 @@
 }
 
 // Add properties
-.notification-wrapper {
-  position: relative;
+.ant-notification-notice {
   display: flex;
-  width: 100%;
-  min-width: 250px;
-  min-height: 60px;
-  border: none;
+  position: relative;
+  width: 300px;
+  max-width: calc(100vw - 24px * 2);
+  margin-bottom: 16px;
+  margin-left: auto;
   padding: 16px 24px;
-  background: white;
+  overflow: hidden;
+  line-height: 1.5715;
+  word-wrap: break-word;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014,
+    0 9px 28px 8px #0000000d;
 
   .icon-notification {
     width: 35px;
@@ -97,6 +120,11 @@
   animation: fadeout 300ms linear forwards;
 }
 
+.elementTopRight {
+  -webkit-animation: fadeinTopRight 200ms linear forwards;
+  animation: fadeinTopRight 200ms linear forwards;
+}
+
 @keyframes fadein {
   0% {
     opacity: 0;
@@ -126,6 +154,17 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeinTopRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
