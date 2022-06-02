@@ -1,6 +1,7 @@
 # antd-notifications-messages
 
-Obtain a behavior equal to the notifications and messages found in the great Ant-Design library, credit for this libraries.
+Obtain a behavior equal to the notifications and messages found in the great Ant-Design library, credit for this
+libraries.
 [demo here](https://antd-notifications-messages.vercel.app)
 
 * [Antd - notifications](https://ant.design/components/notification)
@@ -8,7 +9,8 @@ Obtain a behavior equal to the notifications and messages found in the great Ant
 
 ## Why to use?
 
-Sometimes you probably have a mini project or you just don't need to install the whole antd package to simply use notifications or messages.
+Sometimes you probably have a mini project or you just don't need to install the whole antd package to simply use
+notifications or messages.
 
 ## How to install
 
@@ -21,9 +23,11 @@ or
 - `yarn add antd-notifications-messages`
 
 ## How to use:
+
 import css in fisrt file to project
 
 index.js
+
 ```js
 // import CSS
 import 'antd-notifications-messages/lib/styles/index.css'
@@ -59,13 +63,13 @@ function App() {
 ```
 
 ## Notification Props
+
 |   prop   | type   |  default  |                                       description                                       |
 |:--------:|--------|:---------:|:---------------------------------------------------------------------------------------:|
 | type     | enum   | "success" | Optional. defines the type of notification. "success" \| "info" \| "warning" \| "error" |
 | title    | string | ""        | Required. Title of notification                                                         |
 | message  | string | ""        | Required. Message of notification                                                       |
 | duration | number | 5000      | Optional. Defines the time that the notification will be active on the screen           |
-
 
 [comment]: <> (## Message Props)
 
