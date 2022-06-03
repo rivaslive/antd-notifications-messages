@@ -1,0 +1,80 @@
+
+.fade-in-left {
+  -webkit-animation: fadeInLeft 200ms linear forwards;
+  animation: fadeInLeft 200ms linear forwards;
+}
+
+.fade-in-right {
+  -webkit-animation: fadeInRight 200ms linear forwards;
+  animation: fadeInRight 200ms linear forwards;
+}
+
+.fade-in-top-center {
+  -webkit-animation: fadeInTopCenter 300ms linear forwards;
+  animation: fadeInTopCenter 300ms linear forwards;
+}
+
+.fade-in-bottom-center {
+  -webkit-animation: fadeInBottomCenter 200ms linear forwards;
+  animation: fadeInBottomCenter 200ms linear forwards;
+}
+
+.animation-spin {
+  animation-name: animationSpin;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInTopCenter {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInBottomCenter {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes animationSpin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}

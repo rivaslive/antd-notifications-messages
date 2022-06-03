@@ -4,8 +4,8 @@ Obtain a behavior equal to the notifications and messages found in the great Ant
 libraries.
 [demo here](https://antd-notifications-messages.vercel.app)
 
-* [Antd - notifications](https://ant.design/components/notification)
-* [Antd - messages](https://ant.design/components/message)
+- [Antd - notifications](https://ant.design/components/notification)
+- [Antd - messages](https://ant.design/components/message)
 
 ## Why to use?
 
@@ -37,9 +37,9 @@ import 'antd-notifications-messages/lib/styles/index.css'
 
 ```js
 // import CSS
-import 'antd-notifications-messages/lib/styles/index.css'
-import React from 'react'
-import { notification } from 'antd-notifications-messages'
+import 'antd-notifications-messages/lib/styles/index.css';
+import React from 'react';
+import { notification } from 'antd-notifications-messages';
 
 function App() {
   const show = (type) => {
@@ -47,9 +47,9 @@ function App() {
     notification({
       type,
       title: 'This is a Title',
-      message: `This is a notification type ${type}`,
-    })
-  }
+      message: `This is a notification type ${type}`
+    });
+  };
 
   return (
     <div>
@@ -58,28 +58,27 @@ function App() {
       <button onClick={() => show('warning')}>Warning</button>
       <button onClick={() => show('error')}>Error</button>
     </div>
-  )
+  );
 }
 ```
 
 ## Notification Props
 
 |   prop   | type   |  default  |                                       description                                       |
-|:--------:|--------|:---------:|:---------------------------------------------------------------------------------------:|
-| type     | enum   | "success" | Optional. defines the type of notification. "success" \| "info" \| "warning" \| "error" |
-| title    | string | ""        | Required. Title of notification                                                         |
-| message  | string | ""        | Required. Message of notification                                                       |
-| duration | number | 5000      | Optional. Defines the time that the notification will be active on the screen           |
+| :------: | ------ | :-------: | :-------------------------------------------------------------------------------------: |
+|   type   | enum   | "success" | Optional. defines the type of notification. "success" \| "info" \| "warning" \| "error" |
+|  title   | string |    ""     |                             Required. Title of notification                             |
+| message  | string |    ""     |                            Required. Message of notification                            |
+| duration | number |   5000    |      Optional. Defines the time that the notification will be active on the screen      |
 
 [comment]: <> (## Message Props)
 
-[comment]: <> (|   prop   | type   |  default  |                                       description                                       |)
+[comment]: <> (| prop | type | default | description |)
 
 [comment]: <> (|:--------:|--------|:---------:|:---------------------------------------------------------------------------------------:|)
 
-[comment]: <> (| type     | enum   | "success" | Optional. defines the type of notification. "success" \| "info" \| "warning" \| "error" |)
+[comment]: <> (| type | enum | "success" | Optional. defines the type of notification. "success" \| "info" \| "warning" \| "error" |)
 
-[comment]: <> (| message  | string | ""        | Required. Message of notification                                                       |)
+[comment]: <> (| message | string | "" | Required. Message of notification |)
 
-[comment]: <> (| duration | number | 5000      | Optional. Defines the time that the notification will be active on the screen           |)
-
+[comment]: <> (| duration | number | 5000 | Optional. Defines the time that the notification will be active on the screen |)

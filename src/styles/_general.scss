@@ -1,0 +1,105 @@
+.wrapper-notifications, .wrapper-messages {
+  box-sizing: border-box;
+  padding: 0;
+  color: #000000d9;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: 'tnum';
+  position: fixed;
+  z-index: 1010;
+}
+
+.ant-closable {
+  cursor: pointer;
+}
+
+.rotate {
+  transform: rotate(-90deg);
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+}
+
+.icon-success {
+  .icon {
+    fill: #52c41a;
+  }
+}
+
+.icon-info {
+  .icon {
+    fill: #1890ff;
+  }
+}
+
+.icon-warning {
+  .icon {
+    fill: #faad14;
+  }
+}
+
+.icon-error {
+  .icon {
+    fill: #ff4d4f;
+  }
+}
+
+.icon-message {
+  padding-right: 10px;
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.position-top-left {
+  top: 24px;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  margin: 0 0 0 24px;
+}
+
+.position-top-right {
+  right: 0;
+  top: 24px;
+  left: auto;
+  bottom: auto;
+  margin: 0 24px 0 0;
+}
+
+.position-top-center {
+  top: 24px;
+  bottom: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.position-bottom-center {
+  left: 50%;
+  top: auto;
+  bottom: 24px;
+  margin: 0 auto;
+  transform: translateX(-50%);
+}
+
+.position-bottom-right {
+  right: 0;
+  left: auto;
+  top: auto;
+  bottom: 24px;
+  margin: 0 24px 0 auto;
+}
+
+.position-bottom-left {
+  right: auto;
+  left: 0;
+  top: auto;
+  bottom: 24px;
+  margin: 0 auto 0 24px;
+}

@@ -6,3 +6,4 @@ lib
 .prettierrc
 rollup.config.js
 tsconfig.json
+example

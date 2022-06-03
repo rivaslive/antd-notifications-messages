@@ -7,11 +7,12 @@ import {
   WarningFilled,
   WarningOutline,
   ErrorFilled,
-  ErrorOutline,
+  ErrorOutline
 } from './icon';
+import { ElementType } from '../global';
 
 export interface IconProps {
-  type: TypeElement;
+  type: ElementType;
   isFilled?: boolean;
 }
 
