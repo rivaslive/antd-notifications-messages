@@ -1,0 +1,54 @@
+.ant-notification-notice {
+  display: flex;
+  position: relative;
+  width: 300px;
+  max-width: calc(100vw - 24px * 2);
+  margin-bottom: 16px;
+  margin-left: auto;
+  padding: 16px 24px;
+  overflow: hidden;
+  line-height: 1.5715;
+  word-wrap: break-word;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014,
+  0 9px 28px 8px #0000000d;
+
+  .icon-notification {
+    width: 35px;
+    padding-right: 10px;
+  }
+}
+
+.notification-title {
+  margin-bottom: 3px;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 16px;
+  line-height: 24px;
+  padding-right: 24px;
+}
+
+.notification-content {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.notification-close {
+  position: absolute;
+  color: rgba(0, 0, 0, 0.5);
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.notification-close::after {
+  content: '' !important;
+}
+
+.notification-close::before {
+  content: '✕';
+}
+
+.notification-close:hover {
+  color: rgba(0, 0, 0, 0.85);
+}

@@ -1,6 +1,6 @@
 {
   "name": "antd-notifications-messages",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "files": [
     "/lib"
   ],
@@ -12,9 +12,10 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "sass --watch src/styles:lib/styles",
+    "dev": "nodemon --exec yarn build",
     "build": "yarn build:esm && yarn build:cjs && yarn sass-compiler",
     "build:esm": "tsc",
+    "format": "prettier --write .",
     "build:cjs": "tsc --module commonjs --outDir lib/cjs",
     "sass-compiler": "sass src/styles:lib/styles"
   },
@@ -26,6 +27,7 @@
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
     "copyfiles": "^2.4.1",
+    "nodemon": "^2.0.16",
     "prettier": "^2.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

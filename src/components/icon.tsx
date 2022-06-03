@@ -8,7 +8,7 @@ import InfoFill from '../icons/infoWarningFilled';
 
 const CheckFilled = () => {
   return (
-    <span role="img" aria-label="check-filled">
+    <span className="ant-icon" role="img" aria-label="check-filled">
       <CheckFill />
     </span>
   );
@@ -16,7 +16,7 @@ const CheckFilled = () => {
 
 const CheckOutline = () => {
   return (
-    <span role="img" aria-label="check-outline">
+    <span className="ant-icon" role="img" aria-label="check-outline">
       <CheckOut />
     </span>
   );
@@ -24,7 +24,7 @@ const CheckOutline = () => {
 
 const ErrorFilled = () => {
   return (
-    <span role="img" aria-label="error-filled">
+    <span className="ant-icon" role="img" aria-label="error-filled">
       <ErrorFill />
     </span>
   );
@@ -32,7 +32,7 @@ const ErrorFilled = () => {
 
 const ErrorOutline = () => {
   return (
-    <span role="img" aria-label="error-outline">
+    <span className="ant-icon" role="img" aria-label="error-outline">
       <ErrorOut />
     </span>
   );
@@ -40,7 +40,7 @@ const ErrorOutline = () => {
 
 const InfoFilled = () => {
   return (
-    <span role="img" aria-label="info-filled">
+    <span className="ant-icon" role="img" aria-label="info-filled">
       <InfoFill />
     </span>
   );
@@ -48,7 +48,7 @@ const InfoFilled = () => {
 
 const InfoOutline = () => {
   return (
-    <span role="img" aria-label="info-outline">
+    <span className="ant-icon" role="img" aria-label="info-outline">
       <InfoOut />
     </span>
   );
@@ -56,7 +56,7 @@ const InfoOutline = () => {
 
 const WarningFilled = () => {
   return (
-    <span role="img" aria-label="warning-filled">
+    <span className="ant-icon" role="img" aria-label="warning-filled">
       <InfoFill />
     </span>
   );
@@ -64,7 +64,7 @@ const WarningFilled = () => {
 
 const WarningOutline = () => {
   return (
-    <span role="img" aria-label="warning-outline">
+    <span className="ant-icon" role="img" aria-label="warning-outline">
       <InfoOut />
     </span>
   );
@@ -78,5 +78,5 @@ export {
   InfoFilled,
   InfoOutline,
   WarningFilled,
-  WarningOutline,
+  WarningOutline
 };

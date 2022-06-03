@@ -1,35 +1,45 @@
 import * as React from 'react';
-import { store } from '../utils';
 import { AntdIcon } from './antdIcons';
+import {ElementType} from '../global';
 
-export interface NotificationsProps {
+export interface NotificationProps {
   title?: React.ReactNode;
   message?: React.ReactNode;
-  type?: TypeElement;
+  icon?: React.ReactNode;
+  type?: ElementType;
   id?: string;
-  animation?: 'fadeTop' | 'fadeInRight'
-  [key: string]: unknown;
+  animationClass?: string;
+  onRemove?: () => void;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
-export const Notification: React.FC<NotificationsProps> = ({
+export const Notification: React.FC<NotificationProps> = ({
   title,
+  icon,
   message,
-  type = 'success',
+  onRemove,
   id,
-  animation = 'fadeInRight',
+  animationClass = '',
+  type = 'success',
   className = '',
   ...rest
-}) => (
-  <div
-    className={`ant-notification-notice ${animation === 'fadeInRight' ? 'elementTopRight' : 'elementTopFadeIn'} ${className}`}
-  >
-    <div className={`icon-notification icon-${type}`}>
-      <AntdIcon type={type} {...rest} />
+}) => {
+  const _class = `ant-notification-notice ${className} `;
+
+  return (
+    <div className={_class + animationClass} {...rest}>
+      <div className={`icon-notification icon-${type}`}>
+        {icon || <AntdIcon type={type} />}
+      </div>
+      <div>
+        <div className="notification-title">{title}</div>
+        <div className="notification-content">{message}</div>
+      </div>
+      <div
+        className="notification-close"
+        onClick={() => onRemove && onRemove()}
+      />
     </div>
-    <div>
-      <div className="notification-title">{title}</div>
-      <div className="notification-content">{message}</div>
-    </div>
-    <div className="notification-close" onClick={() => store.remove(id)} />
-  </div>
-);
+  );
+};
