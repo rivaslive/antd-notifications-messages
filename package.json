@@ -1,7 +1,7 @@
 {
   "name": "antd-notifications-messages",
   "description": "Notification for Reactjs based in ant-design",
-  "version": "1.5.1",
+  "version": "1.5.4",
   "files": [
     "/lib"
   ],
@@ -45,7 +45,8 @@
     "build:esm": "tsc",
     "format": "prettier --write .",
     "build:cjs": "tsc --module commonjs --outDir lib/cjs",
-    "sass-compiler": "sass src/styles:lib/styles"
+    "sass-compiler": "sass src/styles:lib/styles",
+    "npm:publish": "yarn build:dev && npm publish"
   },
   "peerDependencies": {
     "react": "^16.8.0",
@@ -63,7 +64,5 @@
     "sass": "^1.43.4",
     "typescript": "^4.4.4"
   },
-  "dependencies": {
-    "react-id-generator": "^3.0.2"
-  }
+  "dependencies": {}
 }

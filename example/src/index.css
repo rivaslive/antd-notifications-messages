@@ -7,6 +7,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+  margin: 30px 10px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
 h2 {
   font-size: 2.2rem;
   line-height: 2.5rem;
