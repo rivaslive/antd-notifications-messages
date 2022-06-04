@@ -1,8 +1,10 @@
+import * as React from 'react';
 import StoreMessage from '../stores/StoreMessage';
 import Message, { MessageProps } from '../components/message';
 import { PositionType } from '../utils/resolvePosition';
 import { DurationType, RenderMessageProps } from '../global';
 import genericResolveProps from './genericResolveAction';
+import LoadingFilled from '../icons/loadingFilled';
 
 const store = new StoreMessage();
 
@@ -44,11 +46,16 @@ const messageLoading = ({
   type = 'success',
   position = 'topCenter',
   closable = false,
+  icon = (
+    <div className={`icon-message`}>
+      <LoadingFilled />
+    </div>
+  ),
   ...props
 }: MessagesProps) => {
   return new Promise((resolve) => {
     const resolveProps = genericResolveProps(
-      { type, ...props },
+      { type, icon, ...props },
       Message,
       'message'
     );
