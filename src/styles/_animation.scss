@@ -1,4 +1,3 @@
-
 .fade-in-left {
   -webkit-animation: fadeInLeft 200ms linear forwards;
   animation: fadeInLeft 200ms linear forwards;
@@ -72,9 +71,9 @@
 
 @keyframes animationSpin {
   from {
-    transform:rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    transform:rotate(360deg);
+    transform: rotate(360deg);
   }
 }

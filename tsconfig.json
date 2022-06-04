@@ -16,9 +16,7 @@
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true,
-    "typeRoots": ["node_modules/@types",
-      "src/global.ts"
-    ]
+    "typeRoots": ["node_modules/@types", "src/global.ts"]
   },
   "include": ["src"],
   "exclude": ["node_modules", "lib", "example"]

@@ -4,7 +4,7 @@ const resolve = {
   topCenter: 'position-top-center',
   bottomRight: 'position-bottom-right',
   bottomLeft: 'position-bottom-left',
-  bottomCenter: 'position-bottom-center',
+  bottomCenter: 'position-bottom-center'
 };
 
 export type PositionType = keyof typeof resolve;

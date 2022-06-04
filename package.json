@@ -1,19 +1,47 @@
 {
   "name": "antd-notifications-messages",
-  "version": "1.5.0",
+  "description": "Notification for Reactjs based in ant-design",
+  "version": "1.5.1",
   "files": [
     "/lib"
   ],
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "types": "./lib/esm/index.d.ts",
-  "repository": "https://github.com/rivaslive/antd-notifications-messages",
-  "author": "rivaslive",
+  "keywords": [
+    "react",
+    "reactjs",
+    "antd",
+    "ant-design",
+    "notification",
+    "component",
+    "components",
+    "design",
+    "framework",
+    "frontend",
+    "react-component",
+    "ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rivaslive/antd-notifications-messages"
+  },
+  "bugs": {
+    "url": "https://github.com/rivaslive/antd-notifications-messages/issues"
+  },
+  "homepage": "https://antd-notifications-messages.vercel.app",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": "Kevin Rivas <kevin.rivaslive@gmail.com> (https://www.beauty-design.app)",
   "license": "MIT",
   "private": false,
   "scripts": {
     "dev": "nodemon --exec yarn build",
-    "build": "yarn build:esm && yarn build:cjs && yarn sass-compiler",
+    "build": "yarn build:esm && yarn build:cjs && yarn sass-compiler && yarn build:example",
+    "build:dev": "yarn build:esm && yarn build:cjs && yarn sass-compiler",
+    "build:example": "cd example && npm run build",
+    "start:example": "cd example && npm run start",
     "build:esm": "tsc",
     "format": "prettier --write .",
     "build:cjs": "tsc --module commonjs --outDir lib/cjs",

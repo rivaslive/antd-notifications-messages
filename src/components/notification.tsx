@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { AntdIcon } from './antdIcons';
-import {ElementType} from '../global';
+import { ElementType } from '../global';
 
 export interface NotificationProps {
   title?: React.ReactNode;
@@ -8,10 +7,10 @@ export interface NotificationProps {
   icon?: React.ReactNode;
   type?: ElementType;
   id?: string;
-  animationClass?: string;
   onRemove?: () => void;
   className?: string;
   style?: React.CSSProperties;
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 export const Notification: React.FC<NotificationProps> = ({
@@ -20,18 +19,13 @@ export const Notification: React.FC<NotificationProps> = ({
   message,
   onRemove,
   id,
-  animationClass = '',
   type = 'success',
   className = '',
   ...rest
 }) => {
-  const _class = `ant-notification-notice ${className} `;
-
   return (
-    <div className={_class + animationClass} {...rest}>
-      <div className={`icon-notification icon-${type}`}>
-        {icon || <AntdIcon type={type} />}
-      </div>
+    <div className={className} {...rest}>
+      {icon}
       <div>
         <div className="notification-title">{title}</div>
         <div className="notification-content">{message}</div>
