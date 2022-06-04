@@ -2,10 +2,10 @@
   display: flex;
   position: relative;
   width: 300px;
-  max-width: calc(100vw - 24px * 2);
+  max-width: calc(100vw - 72px);
   margin-bottom: 16px;
   margin-left: auto;
-  padding: 16px 24px;
+  padding: 16px;
   overflow: hidden;
   line-height: 1.5715;
   word-wrap: break-word;
@@ -16,7 +16,16 @@
 
   .icon-notification {
     width: 35px;
-    padding-right: 10px;
+    padding-right: 5px;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 16px 24px;
+    max-width: calc(100vw - 24px * 2);
+
+    .icon-notification {
+      padding-right: 10px;
+    }
   }
 }
 
