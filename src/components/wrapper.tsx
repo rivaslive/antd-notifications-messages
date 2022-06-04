@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { ElementType } from '../global';
 import { PositionType, resolvePosition } from '../utils/resolvePosition';
 
 export type InstanceType = {
@@ -7,6 +8,8 @@ export type InstanceType = {
   position: string;
   animation: string;
   closable: boolean;
+  type: ElementType;
+  timeoutKey: number | null;
 };
 
 interface WrapperType {
@@ -28,17 +31,22 @@ export const Wrapper: React.FC<WrapperType> = ({
 
   return (
     <div className={_class + positionClass}>
-      {instances.map((child) => (
-        <div key={`${prefix}-${child.key}`}>
-          {React.cloneElement(child.content, {
-            id: child.key,
-            position: child.position,
-            animationClass: child.animation,
-            closable: child.closable,
-            onRemove: () => onRemove(child.key, position)
-          })}
-        </div>
-      ))}
+      {instances.map((child) => {
+        const closableClass = child?.closable ? ' ant-closable' : '';
+        // @ts-ignore
+        const className = child?.props?.className ?? '';
+
+        return (
+          <div key={`${prefix}-${child.key}`}>
+            {React.cloneElement(child.content, {
+              id: child.key,
+              closable: child.closable,
+              className: `ant-${prefix}-notice ${child.animation} ${closableClass} ${className}`,
+              onRemove: () => onRemove(child.key, position)
+            })}
+          </div>
+        );
+      })}
     </div>
   );
 };

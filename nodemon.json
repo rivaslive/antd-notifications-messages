@@ -1,7 +1,4 @@
 {
-  "ignore": [
-    "example",
-    "lib"
-  ],
+  "ignore": ["example", "lib"],
   "delay": 1500
 }

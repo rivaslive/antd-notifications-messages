@@ -1,9 +1,8 @@
-import * as React from 'react';
 import StoreMessage from '../stores/StoreMessage';
-import LoadingFilled from '../icons/loadingFilled';
 import Message, { MessageProps } from '../components/message';
 import { PositionType } from '../utils/resolvePosition';
-import { DurationType } from '../global';
+import { DurationType, RenderMessageProps } from '../global';
+import genericResolveProps from './genericResolveAction';
 
 const store = new StoreMessage();
 
@@ -12,6 +11,7 @@ export type MessagesProps = Omit<MessageProps, 'onRemove' | 'id'> & {
   position?: PositionType;
   closable?: boolean;
   key?: string | number;
+  render?: (props: RenderMessageProps) => JSX.Element;
 };
 
 export const message = ({
@@ -22,37 +22,50 @@ export const message = ({
   closable = false,
   ...props
 }: MessagesProps) => {
+  const resolveProps = genericResolveProps(
+    { type, ...props },
+    Message,
+    'message'
+  );
+
   store.subscribe({
     key,
     duration,
     position,
     closable,
-    content: <Message type={type} {...props} />
+    ...resolveProps
   });
 };
 
 const messageLoading = ({
   key,
+  render,
   duration = 7000,
   type = 'success',
   position = 'topCenter',
   closable = false,
   ...props
 }: MessagesProps) => {
-  const _duration = duration || 5000;
-
   return new Promise((resolve) => {
+    const resolveProps = genericResolveProps(
+      { type, ...props },
+      Message,
+      'message'
+    );
+
     store.subscribe({
       key,
       duration,
       position,
       closable,
-      content: <Message type={type} {...props} icon={<LoadingFilled />} />
+      ...resolveProps
     });
 
-    setTimeout(() => {
-      return resolve(key);
-    }, _duration / 2);
+    duration &&
+      setTimeout(() => {
+        return resolve(key);
+        // resolve 300ms before for update element and not show a new
+      }, duration - 300);
   });
 };
 

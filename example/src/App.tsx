@@ -97,7 +97,9 @@ function App() {
       });
   };
 
-  const showMessages = (props?: MessageAndNotificationProps) => {
+  const showMessages = (
+    props?: Omit<MessageAndNotificationProps, 'render'>
+  ) => {
     return (type: ElementType) =>
       message({
         type,
@@ -140,6 +142,43 @@ function App() {
           message: `This is a message type ${type}`
         })
       );
+  };
+
+  const customMessageRender = (type: ElementType) => {
+    message({
+      type,
+      message: 'The custom Render',
+      render: ({ message, style, className, icon }) => {
+        return (
+          <div style={{ ...style, background: 'black' }} className={className}>
+            <p style={{ color: 'white', display: 'flex' }}>
+              <span>{icon}</span>
+              <b> {message}</b>
+            </p>
+          </div>
+        );
+      }
+    });
+  };
+
+  const customNotificationRender = (type: ElementType) => {
+    notification({
+      type,
+      title: 'The title',
+      message: 'The custom Render',
+      render: ({ message, style, className, icon, title }) => {
+        return (
+          <div style={{ ...style, background: 'black' }} className={className}>
+            <h5 style={{ color: 'white' }}>
+              <span>{icon}</span> {title}
+            </h5>
+            <p style={{ color: 'white' }}>
+              <b>{message}</b>
+            </p>
+          </div>
+        );
+      }
+    });
   };
 
   const onChangePosition = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -201,8 +240,28 @@ function App() {
         onlyMessage
         title="Close in onClick"
         showNotifications={showNotifications()}
+        // @ts-ignore
         showMessages={showMessages({ closable: true })}
       />
+
+      <div className="wrapper">
+        <h2>Custom Render Element:</h2>
+        <h3>Notification</h3>
+        <button
+          className="btn btn-success"
+          onClick={() => customNotificationRender('success')}
+        >
+          Show
+        </button>
+
+        <h3>Messages</h3>
+        <button
+          className="btn btn-success"
+          onClick={() => customMessageRender('success')}
+        >
+          Show
+        </button>
+      </div>
 
       <div className="wrapper">
         <h2>Update Message:</h2>
