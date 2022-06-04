@@ -190,99 +190,102 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <RenderPanel
-        title="Default"
-        showMessages={showMessages()}
-        showNotifications={showNotifications()}
-      />
+    <>
+      <h1>antd-notifications-messages</h1>
+      <div className="container">
+        <RenderPanel
+          title="Default"
+          showMessages={showMessages()}
+          showNotifications={showNotifications()}
+        />
 
-      <RenderPanel
-        title="Custom Position"
-        showMessages={showMessages({ position })}
-        showNotifications={showNotifications({ position })}
-        extra={
-          <select name="position" onChange={onChangePosition}>
-            <option value="" disabled selected hidden>
-              Select position
-            </option>
-            <option value="topLeft">Top Left</option>
-            <option value="topCenter">Top Center</option>
-            <option value="topRight">Top Right</option>
+        <RenderPanel
+          title="Custom Position"
+          showMessages={showMessages({ position })}
+          showNotifications={showNotifications({ position })}
+          extra={
+            <select name="position" onChange={onChangePosition}>
+              <option value="" disabled selected hidden>
+                Select position
+              </option>
+              <option value="topLeft">Top Left</option>
+              <option value="topCenter">Top Center</option>
+              <option value="topRight">Top Right</option>
 
-            <option value="bottomLeft">Bottom Left</option>
-            <option value="bottomCenter">Bottom Center</option>
-            <option value="bottomRight">Bottom Right</option>
-          </select>
-        }
-      />
+              <option value="bottomLeft">Bottom Left</option>
+              <option value="bottomCenter">Bottom Center</option>
+              <option value="bottomRight">Bottom Right</option>
+            </select>
+          }
+        />
 
-      <RenderPanel
-        title="Custom Duration"
-        showMessages={showMessages({ duration })}
-        showNotifications={showNotifications({ duration })}
-        extra={
-          <div>
-            <p>
-              <b>Duration (In millisecond):</b>
-            </p>
-            <input
-              onChange={onChangeDuration}
-              type="number"
-              min="0"
-              value={duration}
-            />
-          </div>
-        }
-      />
+        <RenderPanel
+          title="Custom Duration"
+          showMessages={showMessages({ duration })}
+          showNotifications={showNotifications({ duration })}
+          extra={
+            <div>
+              <p>
+                <b>Duration (In millisecond):</b>
+              </p>
+              <input
+                onChange={onChangeDuration}
+                type="number"
+                min="0"
+                value={duration}
+              />
+            </div>
+          }
+        />
 
-      <RenderPanel
-        onlyMessage
-        title="Close in onClick"
-        showNotifications={showNotifications()}
-        // @ts-ignore
-        showMessages={showMessages({ closable: true })}
-      />
+        <RenderPanel
+          onlyMessage
+          title="Close in onClick"
+          showNotifications={showNotifications()}
+          // @ts-ignore
+          showMessages={showMessages({ closable: true })}
+        />
 
-      <div className="wrapper">
-        <h2>Custom Render Element:</h2>
-        <h3>Notification</h3>
-        <button
-          className="btn btn-success"
-          onClick={() => customNotificationRender('success')}
-        >
-          Show
-        </button>
+        <div className="wrapper">
+          <h2>Custom Render Element:</h2>
+          <h3>Notification</h3>
+          <button
+            className="btn btn-success"
+            onClick={() => customNotificationRender('success')}
+          >
+            Show
+          </button>
 
-        <h3>Messages</h3>
-        <button
-          className="btn btn-success"
-          onClick={() => customMessageRender('success')}
-        >
-          Show
-        </button>
+          <h3>Messages</h3>
+          <button
+            className="btn btn-success"
+            onClick={() => customMessageRender('success')}
+          >
+            Show
+          </button>
+        </div>
+
+        <div className="wrapper">
+          <h2>Update Message:</h2>
+          <h3>Messages</h3>
+          <button
+            className="btn btn-success"
+            onClick={() => updateMessage('success')}
+          >
+            Show
+          </button>
+
+          <h2>Loading Message:</h2>
+          <h3>Messages</h3>
+          <button
+            className="btn btn-success"
+            onClick={() => loadingMessage('success')}
+          >
+            Show
+          </button>
+        </div>
       </div>
-
-      <div className="wrapper">
-        <h2>Update Message:</h2>
-        <h3>Messages</h3>
-        <button
-          className="btn btn-success"
-          onClick={() => updateMessage('success')}
-        >
-          Show
-        </button>
-
-        <h2>Loading Message:</h2>
-        <h3>Messages</h3>
-        <button
-          className="btn btn-success"
-          onClick={() => loadingMessage('success')}
-        >
-          Show
-        </button>
-      </div>
-    </div>
+    </>
   );
 }
 
