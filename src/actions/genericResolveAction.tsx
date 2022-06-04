@@ -16,7 +16,7 @@ type GenericResolveType = {
 function genericResolveProps(
   { render, icon: _icon, type = 'success', ...props }: GenericResolveType,
   Component: any,
-  prefix: 'message' | 'notification'
+  prefix: 'message' | 'notification',
 ) {
   const icon = _icon || (
     <div className={`icon-${prefix} icon-${type}`}>
