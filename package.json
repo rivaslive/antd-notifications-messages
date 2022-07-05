@@ -1,7 +1,7 @@
 {
   "name": "antd-notifications-messages",
   "description": "Notification for Reactjs based in ant-design",
-  "version": "1.5.6",
+  "version": "2.0.0",
   "files": [
     "/lib"
   ],
@@ -49,20 +49,20 @@
     "publish:npm": "yarn build:dev && npm publish"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@types/react": "^17.0.33",
-    "@types/react-dom": "^17.0.10",
-    "copyfiles": "^2.4.1",
-    "nodemon": "^2.0.16",
-    "prettier": "^2.4.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "rimraf": "^3.0.2",
-    "sass": "^1.43.4",
-    "typescript": "^4.4.4"
+    "@types/react": "18.0.14",
+    "@types/react-dom": "18.0.5",
+    "copyfiles": "2.4.1",
+    "nodemon": "2.0.16",
+    "prettier": "2.4.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "rimraf": "3.0.2",
+    "sass": "1.52.2",
+    "typescript": "4.7.3"
   },
   "dependencies": {}
 }

@@ -67,11 +67,13 @@
 }
 
 @media (min-width: 768px) {
-  .position-bottom-left, .position-top-left {
+  .position-bottom-left,
+  .position-top-left {
     margin: 0 auto 0 24px;
   }
 
-  .position-bottom-right, .position-top-right {
+  .position-bottom-right,
+  .position-top-right {
     margin: 0 24px 0 auto;
   }
 }

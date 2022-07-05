@@ -1,5 +1,7 @@
 # antd-notifications-messages
 
+> **_NOTE:_** This package working with React 18. If you used a version 16.x or 17.x, install antd-notifications-messages@1.5.6.
+
 Obtain a behavior equal to the notifications and messages found in the great Ant-Design library, credit for this
 libraries.
 [demo here](https://antd-notifications-messages.vercel.app)
@@ -21,6 +23,14 @@ Install from:
 or
 
 - `yarn add antd-notifications-messages`
+
+for React 16.x and 17.x.
+
+- `npm install antd-notifications-messages@1.5.6`
+
+or
+
+- `yarn add antd-notifications-messages@1.5.6`
 
 ## How to use:
 
