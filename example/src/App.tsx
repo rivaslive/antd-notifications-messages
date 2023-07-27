@@ -17,8 +17,6 @@ type RenderPanelProps = {
   onlyMessage?: boolean;
 };
 
-type MessageAndNotificationProps = Partial<MessagesProps | NotificationsProps>;
-
 const RenderPanel = ({
   title,
   showMessages,
@@ -87,7 +85,7 @@ function App() {
   const [position, setPosition] = useState<PositionType>();
   const [duration, setDuration] = useState<number>(7000);
 
-  const showNotifications = (props?: MessageAndNotificationProps) => {
+  const showNotifications = (props?: NotificationsProps) => {
     return (type: ElementType) =>
       notification({
         type,
@@ -97,9 +95,7 @@ function App() {
       });
   };
 
-  const showMessages = (
-    props?: Omit<MessageAndNotificationProps, 'render'>
-  ) => {
+  const showMessages = (props?: Omit<MessagesProps, 'render'>) => {
     return (type: ElementType) =>
       message({
         type,
@@ -166,15 +162,22 @@ function App() {
       type,
       title: 'The title',
       message: 'The custom Render',
-      render: ({ message, style, className, icon, title }) => {
+      render: ({ message, style, className, icon, title, onRemove }) => {
         return (
-          <div style={{ ...style, background: 'black' }} className={className}>
-            <h5 style={{ color: 'white' }}>
+          <div
+            style={{ ...style, background: 'black', display: 'block' }}
+            className={className}
+          >
+            <h5 style={{ color: 'white', display: 'flex' }}>
               <span>{icon}</span> {title}
             </h5>
             <p style={{ color: 'white' }}>
               <b>{message}</b>
             </p>
+
+            <div>
+              <button onClick={onRemove}>Close</button>
+            </div>
           </div>
         );
       }
@@ -239,10 +242,8 @@ function App() {
         />
 
         <RenderPanel
-          onlyMessage
           title="Close in onClick"
-          showNotifications={showNotifications()}
-          // @ts-ignore
+          showNotifications={showNotifications({ closable: true })}
           showMessages={showMessages({ closable: true })}
         />
 

@@ -35,7 +35,6 @@ export const Wrapper: React.FC<WrapperType> = ({
         const closableClass = child?.closable ? ' ant-closable' : '';
         // @ts-ignore
         const className = child?.props?.className ?? '';
-
         return (
           <div key={`${prefix}-${child.key}`}>
             {React.cloneElement(child.content, {

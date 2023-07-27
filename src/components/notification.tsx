@@ -9,22 +9,32 @@ export interface NotificationProps {
   id?: string;
   onRemove?: () => void;
   className?: string;
+  closable?: boolean;
   style?: React.CSSProperties;
-  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  onClick?: (e: React.MouseEvent<HTMLDivElement>, onHidden: () => void) => void;
 }
 
 export const Notification: React.FC<NotificationProps> = ({
   title,
   icon,
   message,
-  onRemove,
   id,
+  onClick,
+  onRemove = () => {},
   type = 'success',
   className = '',
+  closable,
   ...rest
 }) => {
   return (
-    <div className={className} {...rest}>
+    <div
+      className={className}
+      onClick={(e) => {
+        onClick && onClick(e, onRemove);
+        closable && onRemove();
+      }}
+      {...rest}
+    >
       {icon}
       <div>
         <div className="notification-title">{title}</div>
@@ -32,7 +42,7 @@ export const Notification: React.FC<NotificationProps> = ({
       </div>
       <div
         className="notification-close"
-        onClick={() => onRemove && onRemove()}
+        onClick={onRemove}
       />
     </div>
   );

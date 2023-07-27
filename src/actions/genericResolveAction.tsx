@@ -23,23 +23,20 @@ function genericResolveProps(
       <AntdIcon isFilled={prefix === 'message'} type={type} />
     </div>
   );
+  const _render = () => {
+    if (render) {
+      const InternalComponent = (newProps: any) => <>{render(newProps)}</>;
+      return <InternalComponent type={type} icon={icon} {...props} />;
+    }
 
-  const _render = render ? (
-    render({
-      ...props,
-      type,
-      icon: icon as JSX.Element,
-      message: props.message as JSX.Element
-    })
-  ) : (
-    <Component type={type} icon={icon} {...props} />
-  );
+    return <Component type={type} icon={icon} {...props} />;
+  };
 
   return {
     type,
     icon,
     ...props,
-    content: _render
+    content: _render()
   };
 }
 

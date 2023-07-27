@@ -10,6 +10,7 @@ export type NotificationsProps = Omit<
   NotificationProps,
   'onRemove' | 'id' | 'animation'
 > & {
+  closable?: boolean;
   duration?: DurationType;
   position?: PositionType;
   render?: (props: RenderNotificationProps) => JSX.Element;
@@ -19,6 +20,7 @@ export const notification = ({
   duration = 7000,
   position = 'topRight',
   type = 'success',
+  closable = false,
   ...props
 }: NotificationsProps) => {
   const resolveProps = genericResolveProps(
@@ -30,6 +32,7 @@ export const notification = ({
   store.subscribe({
     duration,
     position,
+    closable,
     ...resolveProps
   });
 };

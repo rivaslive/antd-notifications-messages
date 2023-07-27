@@ -1,7 +1,7 @@
 {
   "name": "antd-notifications-messages",
   "description": "Notification for Reactjs based in ant-design",
-  "version": "2.0.0",
+  "version": "2.0.3",
   "files": [
     "/lib"
   ],
@@ -33,7 +33,7 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "author": "Kevin Rivas <kevin.rivaslive@gmail.com> (https://www.beauty-design.app)",
+  "author": "Kevin Rivas <kevin.rivaslive@gmail.com> (https://www.redshank.app)",
   "license": "MIT",
   "private": false,
   "scripts": {
@@ -49,17 +49,17 @@
     "publish:npm": "yarn build:dev && npm publish"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/react": "18.0.14",
-    "@types/react-dom": "18.0.5",
+    "@types/react": "^18.2.7",
+    "@types/react-dom": "^18.2.4",
     "copyfiles": "2.4.1",
     "nodemon": "2.0.16",
     "prettier": "2.4.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "rimraf": "3.0.2",
     "sass": "1.52.2",
     "typescript": "4.7.3"
